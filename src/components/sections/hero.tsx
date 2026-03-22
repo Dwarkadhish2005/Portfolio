@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 import { Button } from "../ui/button";
 import { File, Github, Linkedin } from "lucide-react";
 import {
@@ -81,20 +82,31 @@ const HeroSection = () => {
                 </BlurIn>
               </div>
               <div className="mt-8 flex flex-col gap-3 w-fit">
-                <Link
-                  href={
-                    "https://drive.google.com/file/d/1sKhT63ibkuIqTiFR_St5YURspimx8P7G/view?usp=drive_link"
-                  }
-                  target="_blank"
-                  className="flex-1"
-                >
-                  <BoxReveal delay={2} width="100%" >
-                    <Button className="flex items-center gap-2 w-full">
-                      <File size={24} />
-                      <p>Resume</p>
-                    </Button>
-                  </BoxReveal>
-                </Link>
+                <div className="flex items-center gap-16 md:gap-32">
+                  <Link
+                    href={
+                      "https://drive.google.com/file/d/1sKhT63ibkuIqTiFR_St5YURspimx8P7G/view?usp=drive_link"
+                    }
+                    target="_blank"
+                    className="flex-1"
+                  >
+                    <BoxReveal delay={2} width="100%" >
+                      <Button className="flex items-center gap-2 w-full">
+                        <File size={24} />
+                        <p>Resume</p>
+                      </Button>
+                    </BoxReveal>
+                  </Link>
+                  <div className="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-2 border-slate-200 dark:border-slate-800 shrink-0">
+                    <Image
+                      src="/my-photo.jpeg"
+                      alt="My Photo"
+                      width={192}
+                      height={192}
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                </div>
                 <div className="md:self-start flex gap-3">
                   <Tooltip delayDuration={300}>
                     <TooltipTrigger asChild>
@@ -108,7 +120,7 @@ const HeroSection = () => {
                       </Link>
                     </TooltipTrigger>
                     <TooltipContent side="bottom">
-                      <p>pls 🥹 🙏</p>
+                      <p></p>
                     </TooltipContent>
                   </Tooltip>
                   <div className="flex items-center h-full gap-2">
