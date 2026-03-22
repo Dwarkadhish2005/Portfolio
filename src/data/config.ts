@@ -37,7 +37,6 @@ const config = {
   social: {
     twitter: "https://x.com/Dwarkadhish2005",
     linkedin: "https://www.linkedin.com/in/dwarkadhish/",
-    instagram: "https://www.instagram.com/dwarkadhish",
     facebook: "https://www.facebook.com/dwarkadhish",
     github: "https://github.com/Dwarkadhish2005",
   },
