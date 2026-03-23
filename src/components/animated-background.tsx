@@ -227,8 +227,12 @@ const AnimatedBackground = () => {
 
   const updateKeyboardTransform = async () => {
     if (!splineApp) return;
-    const kbd = splineApp.findObjectByName("keyboard");
-    if (!kbd) return;
+    const kbd = splineApp.findObjectByName("keyboard") || splineApp.getAllObjects().find(o => o.name.toLowerCase() === 'keyboard') || splineApp.getAllObjects()[0];
+    if (!kbd) {
+      console.warn("Could not find a 'keyboard' object or any root object in the Spline file.");
+      setKeyboardRevealed(true);
+      return;
+    }
 
     kbd.visible = false;
     await sleep(400);
@@ -349,7 +353,10 @@ const AnimatedBackground = () => {
     if (!selectedSkill || !splineApp) return;
     // console.log(selectedSkill)
     splineApp.setVariable("heading", selectedSkill.label);
-    splineApp.setVariable("desc", selectedSkill.shortDescription);
+    
+    // Combine both the title and shortDescription directly here so it shows up in the same description block
+    const updatedDesc = `${selectedSkill.label} — ${selectedSkill.shortDescription}`;
+    splineApp.setVariable("desc", updatedDesc);
   }, [selectedSkill]);
 
   // Handle rotation and teardown animations based on active section
@@ -359,7 +366,7 @@ const AnimatedBackground = () => {
     let rotateKeyboard: gsap.core.Tween | undefined;
     let teardownKeyboard: gsap.core.Tween | undefined;
 
-    const kbd = splineApp.findObjectByName("keyboard");
+    const kbd = splineApp.findObjectByName("keyboard") || splineApp.getAllObjects().find(o => o.name.toLowerCase() === 'keyboard') || splineApp.getAllObjects()[0];
 
     if (kbd) {
       rotateKeyboard = gsap.to(kbd.rotation, {
@@ -454,7 +461,7 @@ const AnimatedBackground = () => {
           setSplineApp(app);
           bypassLoading();
         }}
-        scene="/assets/skills-keyboard.spline"
+        scene="/assets/untitled5.spline"
       />
     </Suspense>
   );
