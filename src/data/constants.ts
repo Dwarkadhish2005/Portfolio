@@ -306,6 +306,49 @@ export const themeDisclaimers = {
   ],
 };
 
+export const ACADEMIC_JOURNEY = [
+  {
+    id: 1,
+    title: "Bachelor of Technology - Computer Science and Engineering; CGPA: 8.86",
+    issuer: "Lovely Professional University Phagwara, Punjab",
+    date: "Aug ’23 – Jun ’27"
+  },
+  {
+    id: 2,
+    title: "Intermediate; Percentage: 81%",
+    issuer: "Rajmata Jijau Shikshan Prasarak Mandal Pune, Maharashtra",
+    date: "Apr ’22 – Mar ’23"
+  },
+  {
+    id: 3,
+    title: "Matriculation; Percentage: 83.3%",
+    issuer: "St. Joseph Boys’ High School Pune, Maharashtra",
+    date: "Apr ’20 – Mar ’21"
+  }
+];
+
+export const ACHIEVEMENTS = [
+  {
+    id: 1,
+    title: "Top 4% on LeetCode (Knight Badge)",
+    description: "Ranked in the top 4% on LeetCode, earning a Knight badge with a 1908 rating and solving 800+ problems.",
+    date: "Feb ’26"
+  },
+  {
+    id: 2,
+    title: "Global Rank 9892 on CodeChef (1732 Rating)",
+    description: "Achieved Global Rank of 9892 on CodeChef with 1732 rating in competitive programming contests.",
+    date: "Nov ’25"
+  },
+  {
+    id: 3,
+    title: "5-Star Badge on HackerRank",
+    description: "Earned a 5-star badge on HackerRank with 805 pts in Python & SQL and 670 pts in C++.",
+    date: "Jan ’25"
+  }
+];
+
+
 
 
 

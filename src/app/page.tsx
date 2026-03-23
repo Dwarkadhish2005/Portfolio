@@ -9,6 +9,8 @@ import CertificationsSection from "@/components/sections/certifications";
 import ProjectsSection from "@/components/sections/projects";
 import ContactSection from "@/components/sections/contact";
 import HeroSection from "@/components/sections/hero";
+import AcademicJourneySection from "@/components/sections/academic-journey";
+import AchievementsSection from "@/components/sections/achievements";
 
 function MainPage() {
   return (
@@ -17,6 +19,8 @@ function MainPage() {
       <main className={cn("bg-slate-100 dark:bg-transparent canvas-overlay-mode")}>
         <HeroSection />
         <SkillsSection />
+        <AcademicJourneySection />
+        <AchievementsSection />
         <CertificationsSection />
         <ProjectsSection />
         <ContactSection />
